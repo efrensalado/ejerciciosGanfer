@@ -1,0 +1,73 @@
+<!--div class="container d-flex justify-content-center" id="main">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card" id="tarjeta">
+        <div class="card-header">
+          <p class="text-success"><b>Lista de tareas</b></p>
+        </div>
+        <div class="card-body text-center">
+          <input type="text" #newToDo (keyup.enter)="addToDo(newToDo.value); newToDo.value=''" class="form-control"
+            placeholder="Ingrese una tarea">
+          <br>
+          <div>
+            <p class="txt txt-info">Tareas registradas</p>
+            <div class="container" *ngFor="let todo of this.toDo">
+              <div class="row">
+                <div class="col">
+                  <input class="col-sm-4" type="checkbox" *ngIf="todo.status == true" checked
+                    (change)="changeStatus($event, todo.id)">
+                  <input class="col-sm-4" type="checkbox" *ngIf="todo.status == false" (change)="changeStatus($event, todo.id)">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control mb-2" disabled value="{{todo.tarea}}">
+                </div>
+                <div class="col">
+                  <button class="btn btn-danger" (click)="deleteTareas(todo.id)">X</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="todolist not-done">
+        <h3>Lista de tareas</h3>
+        <!--input type="text" class="form-control add-todo" placeholder="Add todo"-->
+        <input type="text" #newToDo (keyup.enter)="addToDo(newToDo.value); newToDo.value=''"
+          class="form-control add-todo" placeholder="Ingrese una tarea">
+        <hr>
+        <ul id="sortable" class="list-unstyled">
+          <li class="ui-state-default">
+            <div class="checkbox" *ngFor="let todo of this.toDo">
+              <div class="row justify-content-between">
+                <hr id="divisor">
+                <div class="col">
+                  <label>
+                    <input class="checkbox" type="checkbox" *ngIf="todo.status == true" checked
+                      (change)="changeStatus($event, todo.id)">
+                    <input class="checkbox" type="checkbox" *ngIf="todo.status == false"
+                      (change)="changeStatus($event, todo.id)">
+                    {{todo.tarea}}
+                  </label>
+                </div>
+                <div class="col justify-content-end">
+                  <p align="right">
+                    <a class="btn btn-sm btn-danger" id="borrar" (click)="deleteTareas(todo.id)">X</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="todo-footer">
+          <p>Total de tareas guardadas: <b>{{this.totalTareas}}</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

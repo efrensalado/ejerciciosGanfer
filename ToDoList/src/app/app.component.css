@@ -1,0 +1,72 @@
+body {
+  background-color: rgb(107, 107, 107);
+}
+
+.todolist {
+  background-color: rgb(136, 152, 223);
+  padding: 20px 20px 10px 20px;
+  margin-top: 30px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #000;
+  border-radius: 10px;
+}
+
+.todolist h3 {
+  margin: 0;
+  padding-bottom: 15px;
+  text-align: center;
+  border-color: #000;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+
+li.ui-state-default {
+  background: rgb(136, 152, 223);
+  border: none;
+  border-bottom: 1px solid #bbb;
+}
+
+label {
+  color: #fff
+}
+
+li.ui-state-default:last-child {
+  border-bottom: none;
+}
+
+#borrar {
+  text-align: justify;
+  border-color: grey;
+  color: white;
+}
+
+#divisor {
+  color: #fff;
+}
+
+.todo-footer {
+  background-color: rgb(141, 235, 149);
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 10px;
+  border-color: black;
+  margin: 0 -20px -10px -20px;
+  padding: 10px 20px;
+}
+
+#done-items li {
+  padding: 10px 0;
+  border-bottom: 1px solid #000;
+  text-decoration: line-through;
+}
+
+#done-items li:last-child {
+  border-bottom: none;
+}
+
+#checkAll {
+  margin-top: 10px;
+}
